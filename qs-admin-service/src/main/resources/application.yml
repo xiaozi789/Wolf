@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: qs-admin-service
+server:
+  port: 882
+  context-path: /qs-admin-service/remoting
+yunling:
+  jdbc:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.3.83:3306/oilyy_test?useUnicode=true&characterEncoding=utf8
+    username: 9f3190ba81b99a2e
+    password: 689264cb5d9407fc15c588afd6e68921
+
+mybatis:
+  mapper-locations: classpath*:sqlmap/*Mapper.xml
+  type-aliases-package: com.qishi.admin.model,com.qishi.admin.bean
+  configuration:
+    map-underscore-to-camel-case: true
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
+mapper:
+  mappers: com.qishi.admin.util.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka.yunling.org/eureka/
+    decoder-name: JacksonJson
+    prefer-same-zone-eureka: true
+    use-dns-for-fetching-service-urls: false
+    registry-fetch-interval-seconds: 1
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    metadata-map:
+      version:  '@project.version@'
+ribbon:
+  ServerListRefreshInterval: 1000
+
+
+logging:
+  level: info
+
