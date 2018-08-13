@@ -8,7 +8,7 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka.yunling.org/eureka/
+      defaultZone:
     decoder-name: JacksonJson
     prefer-same-zone-eureka: true
     use-dns-for-fetching-service-urls: false

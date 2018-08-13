@@ -7,9 +7,9 @@ server:
 yunling:
   jdbc:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.3.83:3306/oilyy_test?useUnicode=true&characterEncoding=utf8
-    username: 9f3190ba81b99a2e
-    password: 689264cb5d9407fc15c588afd6e68921
+    url:
+    username:
+    password:
 
 mybatis:
   mapper-locations: classpath*:sqlmap/*Mapper.xml
@@ -27,7 +27,7 @@ mapper:
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka.yunling.org/eureka/
+      defaultZone:
     decoder-name: JacksonJson
     prefer-same-zone-eureka: true
     use-dns-for-fetching-service-urls: false
